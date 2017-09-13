@@ -1,0 +1,11 @@
+---
+name: python-2.7-test
+
+templates:
+  run: bin/run
+
+packages:
+- python-2.7
+- python-2.7-test
+
+properties: {}

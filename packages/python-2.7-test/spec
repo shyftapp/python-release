@@ -1,0 +1,5 @@
+---
+name: python-2.7-test
+
+dependencies:
+- python-2.7

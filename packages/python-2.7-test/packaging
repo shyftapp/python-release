@@ -1,0 +1,6 @@
+set -x -e
+
+source /var/vcap/packages/python-2.7/bosh/compile.env
+
+bosh_generate_runtime_env
+bosh_pip brkt-cli
