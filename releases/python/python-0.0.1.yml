@@ -1,0 +1,21 @@
+name: python
+version: 0.0.1
+commit_hash: 537932a
+uncommitted_changes: false
+jobs:
+- name: python-2.7-test
+  version: 2e539c6e27708fd48abff84d63de6bb72eda9d6a
+  fingerprint: 2e539c6e27708fd48abff84d63de6bb72eda9d6a
+  sha1: a855947b3d87777f9d801b20e17b5bbcf3cdbf5c
+packages:
+- name: python-2.7
+  version: 7063c9f4e43bf49374c2f6cc6c2f74a5467f2298
+  fingerprint: 7063c9f4e43bf49374c2f6cc6c2f74a5467f2298
+  sha1: bd130315766a7641dbd20aa328d16f084cc17965
+  dependencies: []
+- name: python-2.7-test
+  version: 9f6e5cfd5b493964c09b1c3db8cf3ad4e2cb0d04
+  fingerprint: 9f6e5cfd5b493964c09b1c3db8cf3ad4e2cb0d04
+  sha1: 5c04820d98d12d86f2e302aa1b5d4c8b4f4fa854
+  dependencies:
+  - python-2.7
