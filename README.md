@@ -3,7 +3,7 @@
 To vendor python package into your release, run:
 
 ```
-$ bosh vendor-package golang-2.7 ~/workspace/bosh-packages/python-release
+$ bosh vendor-package python-2.7 ~/workspace/bosh-packages/python-release
 ```
 
 Included packages:
