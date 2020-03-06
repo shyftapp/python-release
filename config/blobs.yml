@@ -1,9 +1,12 @@
 Python-2.7.15.tgz:
   size: 17496336
+  object_id: 1fd09ef5-49b0-43ed-492c-09bbacc3009e
   sha: sha256:18617d1f15a380a919d517630a9cd85ce17ea602f9bbdc58ddc672df4b0239db
 pip-18.0.tar.gz:
   size: 1249656
+  object_id: 6a2e0de1-bf62-4bb3-6cde-749b1b40253e
   sha: sha256:a0e11645ee37c90b40c46d607070c4fd583e2cd46231b1c06e389c5e814eed76
 setuptools-40.4.3.zip:
   size: 854871
+  object_id: 2b93efa2-3aee-492e-4af0-782aa143b9c1
   sha: sha256:acbc5740dd63f243f46c2b4b8e2c7fd92259c2ddb55a4115b16418a2ed371b15
