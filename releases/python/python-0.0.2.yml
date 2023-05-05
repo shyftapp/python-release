@@ -1,0 +1,46 @@
+name: python
+version: 0.0.2
+commit_hash: 1b23cad
+uncommitted_changes: false
+jobs:
+- name: python-2.7-test
+  version: e1c4e33c094bc6b3ed1efd637d109cb996cac9221132d4ac18808b496f3571d7
+  fingerprint: e1c4e33c094bc6b3ed1efd637d109cb996cac9221132d4ac18808b496f3571d7
+  sha1: sha256:97abd4728ad71811daa46039114952b65b91d23eb94d63084ee50a1c3e72549b
+  packages:
+  - python-2.7
+  - python-2.7-test
+- name: python-3.10-test
+  version: d540ad357b3f676760b52108214d4930b8ba44fc97f9ba6b9a5a8548130f4ad9
+  fingerprint: d540ad357b3f676760b52108214d4930b8ba44fc97f9ba6b9a5a8548130f4ad9
+  sha1: sha256:1bb47adf1e88c2d5fc53417b6316da175d29ead352949dedc5f203522a88f2f5
+  packages:
+  - python-3.10
+  - python-3.10-test
+packages:
+- name: python-2.7
+  version: bc75604d1c6d17846fe7ab901ae2b80dcbd580fc1556df44a293567ba6b4b697
+  fingerprint: bc75604d1c6d17846fe7ab901ae2b80dcbd580fc1556df44a293567ba6b4b697
+  sha1: sha256:db61b6e03b26ac789a26f7b7461602c11b537373090893e3e201d2d96c32f877
+  dependencies: []
+- name: python-2.7-test
+  version: 3541ac304946697e5decfcd7387093f7ab4398788c261bd693b3f2f69e06e4d3
+  fingerprint: 3541ac304946697e5decfcd7387093f7ab4398788c261bd693b3f2f69e06e4d3
+  sha1: sha256:f2f921207c4f1d0f17012b2b0923dc1d1abc9662c5fff6bb7d9968aa01f430f3
+  dependencies:
+  - python-2.7
+- name: python-3.10
+  version: 245dc942e86f2e413ef647b06343f99962021707e9757e668d7edb53bafd3ccd
+  fingerprint: 245dc942e86f2e413ef647b06343f99962021707e9757e668d7edb53bafd3ccd
+  sha1: sha256:570c6eb6b5f0665b9b942d2da0a467f23436fecd6f2f264b54f54e1bc14c8efb
+  dependencies: []
+- name: python-3.10-test
+  version: 498e275785294cc133228dd01676280ac683daf514974b596ef2ff79ec2ba6f1
+  fingerprint: 498e275785294cc133228dd01676280ac683daf514974b596ef2ff79ec2ba6f1
+  sha1: sha256:adc45411d5e728a8cfdd36d6cd862aae6b190abb513eebafc1f8b60e24cf970d
+  dependencies:
+  - python-3.10
+license:
+  version: 850893456ab4b5e6be730bbcf0056892bb753e2cba4fba21e5f64035f3fc53db
+  fingerprint: 850893456ab4b5e6be730bbcf0056892bb753e2cba4fba21e5f64035f3fc53db
+  sha1: sha256:b1c167fc119f2b9b4c94440844e6a07d686a328fbbc846221dfb0fca73dcbc5f

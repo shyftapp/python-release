@@ -10,10 +10,27 @@ cp compile-3.10.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
 echo "Extracting python..."
 tar xzvf Python-3.10.10.tgz
 
+echo "Extracting libffi-3.4.4.tar.gz ..."
+if ! tar xpvf libffi-3.4.4.tar.gz ; then
+  echo "Failed extracting libffi-3.4.4.tar.gz ..."
+  exit 1
+fi
+
+echo "Installing libffi..."
+pushd libffi-3.4.4
+  ./configure --prefix="${BOSH_INSTALL_TARGET}"/libffi
+  make
+  make install
+popd
+
+export LDFLAGS=-L${BOSH_INSTALL_TARGET}/libffi/lib
+export CPPFLAGS="-I${BOSH_INSTALL_TARGET}/libffi/include"
+export PKG_CONFIG_PATH=${BOSH_INSTALL_TARGET}/libffi/lib/pkgconfig
+
 echo "Building python..."
 pushd Python-3.10.10
-  ./configure --prefix=$BOSH_INSTALL_TARGET --enable-optimizations
-  make -j $CPUS
+  ./configure --prefix=$BOSH_INSTALL_TARGET --with-system-ffi
+  make -j $CPUS 
   make install
 popd
 
