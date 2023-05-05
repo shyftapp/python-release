@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source /var/vcap/packages/python-3.10/bosh/runtime.env
+source /var/vcap/packages/python-3.10-test/bosh/runtime.env
+
+export PATH=/var/vcap/packages/python-3.10-test/bin:$PATH
+
+jc -v

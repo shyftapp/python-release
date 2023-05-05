@@ -1,0 +1,11 @@
+---
+name: python-3.10-test
+
+templates:
+  run: bin/run
+
+packages:
+- python-3.10
+- python-3.10-test
+
+properties: {}
