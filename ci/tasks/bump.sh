@@ -13,7 +13,7 @@ function replace_if_necessary() {
     if [ -n "${existing_blob}" ]; then
       bosh remove-blob ${existing_blob}
     fi
-    bosh add-blob --sha2 ../python-${version}/${blobname} ${blobname}
+    bosh add-blob --sha2 ../python-${version}/${blobname} python-${version}/${blobname}
     bosh upload-blobs
   fi
 }
