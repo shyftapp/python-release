@@ -11,7 +11,7 @@ echo "Extracting python..."
 tar xzvf python-3.10/Python-3.10.*.tgz
 
 echo "Extracting libffi-3.4.4.tar.gz ..."
-if ! tar xpvf libffi-3.4.4.tar.gz ; then
+if ! tar xpvf python-3.10/libffi-3.4.4.tar.gz ; then
   echo "Failed extracting libffi-3.4.4.tar.gz ..."
   exit 1
 fi
@@ -35,7 +35,7 @@ pushd Python-3.10.*
 popd
 
 echo "Extracting setuptools..."
-tar xzvf setuptools-67.7.2.tar.gz
+tar xzvf python-3.10/setuptools-67.7.2.tar.gz
 
 echo "Creating the setuptools site packages..."
 mkdir -p $BOSH_INSTALL_TARGET/lib/python3.10/site-packages

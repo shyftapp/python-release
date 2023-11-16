@@ -5,5 +5,5 @@ files:
 - compile-3.10.env
 - runtime-3.10.env
 - python-3.10/Python-3.10.10.tgz
-- setuptools-67.7.2.tar.gz
-- libffi-3.4.4.tar.gz
+- python-3.10/setuptools-67.7.2.tar.gz
+- python-3.10/libffi-3.4.4.tar.gz
