@@ -103,8 +103,8 @@ resources:
     #      that filtering there.
     version: 3.10.x
     version_check: |
-      curl -s 'https://go.dev/dl/?mode=json&include=all' | \
-        jq -r '.[].version[2:] | select((contains("rc") or contains("beta")) | not)'
+      curl -s 'https://endoflife.date/api/python.json' | \
+        jq -r '.[].latest'
     metalink_get: |
       export name="Python-${version}.tgz"
       export url="https://www.python.org/ftp/python/${version}/Python-${version}.tgz"
