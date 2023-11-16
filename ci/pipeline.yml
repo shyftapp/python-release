@@ -36,9 +36,9 @@ jobs:
         ---
         blobstore:
           options:
-            access_key_id: ((bosh-packages-python-release-uploader_assume_aws_access_key.username))
-            secret_access_key: ((bosh-packages-python-release-uploader_assume_aws_access_key.password))
-            assume_role_arn: ((bosh-packages-python-release-uploader_assume_aws_access_key.role_arn))
+            access_key_id: ((bosh-packages-ruby-release-uploader_assume_aws_access_key.username))
+            secret_access_key: ((bosh-packages-ruby-release-uploader_assume_aws_access_key.password))
+            assume_role_arn: ((bosh-packages-ruby-release-uploader_assume_aws_access_key.role_arn))
   - in_parallel:
     - put: semver
       params:
