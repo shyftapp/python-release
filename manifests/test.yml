@@ -4,11 +4,11 @@ name: test
 releases:
 - name: python
   version: create
-  url: file:///Users/pivotal/workspace/python-release
+  url: file://.
 
 stemcells:
 - alias: default
-  os: ubuntu-trusty
+  os: ((os))
   version: latest
 
 update:
@@ -18,15 +18,15 @@ update:
   update_watch_time: 5000-60000
 
 instance_groups:
-- name: zookeeper
+- name: python-3.10-test
   azs: [z1]
   instances: 1
   jobs:
-  - name: python-2.7-test
+  - name: python-3.10-((job-name))
     release: python
     properties: {}
   vm_type: default
+  vm_extensions: ((ephemeral-disk))
   stemcell: default
-  persistent_disk: 10240
   networks:
   - name: default

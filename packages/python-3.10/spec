@@ -4,6 +4,6 @@ name: python-3.10
 files:
 - compile-3.10.env
 - runtime-3.10.env
-- Python-3.10.10.tgz
+- python-3.10/Python-3.10.10.tgz
 - setuptools-67.7.2.tar.gz
 - libffi-3.4.4.tar.gz
