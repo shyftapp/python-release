@@ -1,0 +1,133 @@
+---
+jobs:
+- name: bump
+  serial: true
+  plan:
+  - in_parallel:
+    - get: python-3.10
+      trigger: true
+    - get: python-release
+    - get: stemcell
+    - get: semver
+      params:
+        bump: minor
+    - get: bosh-cli-image
+    - get: bosh-warden-cpi-image
+  - task: bump
+    file: python-release/ci/tasks/bump.yml
+    image: bosh-cli-image
+    params:
+      PRIVATE_YML: |
+        ---
+        blobstore:
+          options:
+            access_key_id: ((bosh-packages-ruby-release-uploader_assume_aws_access_key.username))
+            secret_access_key: ((bosh-packages-ruby-release-uploader_assume_aws_access_key.password))
+            assume_role_arn: ((bosh-packages-ruby-release-uploader_assume_aws_access_key.role_arn))
+  - task: test
+    file: python-release/ci/tasks/test.yml
+    privileged: true
+    image: bosh-warden-cpi-image
+  - task: finalize
+    file: python-release/ci/tasks/finalize.yml
+    image: bosh-cli-image
+    params:
+      PRIVATE_YML: |
+        ---
+        blobstore:
+          options:
+            access_key_id: ((bosh-packages-python-release-uploader_assume_aws_access_key.username))
+            secret_access_key: ((bosh-packages-python-release-uploader_assume_aws_access_key.password))
+            assume_role_arn: ((bosh-packages-python-release-uploader_assume_aws_access_key.role_arn))
+  - in_parallel:
+    - put: semver
+      params:
+        file: bumped-semver/version
+    - put: python-release
+      params:
+        rebase: true
+        repository: finalized-release
+        tag: version-tag/tag-name
+        annotate: version-tag/annotate-msg
+
+resources:
+- name: python-release
+  type: git
+  source:
+    uri: git@github.com:cloudfoundry/bosh-package-python-release.git
+    branch: main
+    private_key: ((github_deploy_key_python-release.private_key))
+
+- name: bosh-cli-image
+  type: registry-image
+  source:
+    repository: bosh/cli
+    username: ((docker.username))
+    password: ((docker.password))
+
+- name: bosh-warden-cpi-image
+  type: registry-image
+  source:
+    repository: bosh/warden-cpi
+    username: ((docker.username))
+    password: ((docker.password))
+
+- name: stemcell
+  type: bosh-io-stemcell
+  source:
+    name: bosh-warden-boshlite-ubuntu-jammy-go_agent
+
+- name: semver
+  type: semver
+  source:
+    bucket: bosh-packages-python-release
+    key: version
+    initial_version: 0.1.0
+    access_key_id: ((bosh-packages-ruby-release-uploader_assume_aws_access_key.username))
+    secret_access_key: ((bosh-packages-ruby-release-uploader_assume_aws_access_key.password))
+    assume_role_arn: ((bosh-packages-ruby-release-uploader_assume_aws_access_key.role_arn))
+
+- name: python-3.10
+  type: dynamic-metalink
+  source:
+    #NOTE: The 'include=all' parameter to this server is documented here: <https://pkg.go.dev/golang.org/x/website/internal/dl>,
+    #      which was found via: <https://github.com/golang/go/issues/34864>. The devs on the project seem to believe that this is
+    #      an implementation detail and could be subject to change at any time. So beware.
+    #
+    #      Anyway. Because 1.20.x is an "archived" Go minor version, we must use the 'include=all' flag to get information about it.
+    #      This has the unfortunate side-effect of including "unstable" releases, but given that 1.20.x is no longer supported, it is
+    #      _probably_ okay to assume that we won't get unstable or testing releases of 1.20.x.
+    #      Because version_check is picky, we also have to filter out unstable and testing releases, as they're not specified in a 
+    #      semver-compatible way. They seem to be specified with the "beta" and "rc" keywords, respectively, so we perform the required
+    #      jq gyrations below. The metalink_get machinery seems to be fine with ignoring the "beta" and "rc" entries, so we don't duplicate
+    #      that filtering there.
+    version: 3.10.x
+    version_check: |
+      curl -s 'https://go.dev/dl/?mode=json&include=all' | \
+        jq -r '.[].version[2:] | select((contains("rc") or contains("beta")) | not)'
+    metalink_get: |
+      export name="Python-${version}.tgz"
+      export url="https://www.python.org/ftp/python/${version}/Python-${version}.tgz"
+      export size=$( curl --silent --head "$url" | grep Content-Length | awk '{ print $2 }' | tr -cd '[:digit:]' )
+      jq -n '
+      {
+       "files": [
+        {
+         "name": env.name,
+         "urls": [ { "url": env.url } ],
+         "size": env.size | tonumber
+        }
+       ]
+      }'
+
+resource_types:
+- name: dynamic-metalink
+  type: docker-image
+  source:
+    repository: dpb587/dynamic-metalink-resource
+
+- name: semver
+  type: docker-image
+  source:
+    repository: concourse/semver-resource
+    tag: 1.6

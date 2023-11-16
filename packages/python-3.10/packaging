@@ -8,7 +8,7 @@ cp runtime-3.10.env ${BOSH_INSTALL_TARGET}/bosh/runtime.env
 cp compile-3.10.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
 
 echo "Extracting python..."
-tar xzvf Python-3.10.10.tgz
+tar xzvf Python-3.10.*.tgz
 
 echo "Extracting libffi-3.4.4.tar.gz ..."
 if ! tar xpvf libffi-3.4.4.tar.gz ; then
@@ -28,7 +28,7 @@ export CPPFLAGS="-I${BOSH_INSTALL_TARGET}/libffi/include"
 export PKG_CONFIG_PATH=${BOSH_INSTALL_TARGET}/libffi/lib/pkgconfig
 
 echo "Building python..."
-pushd Python-3.10.10
+pushd Python-3.10.*
   ./configure --prefix=$BOSH_INSTALL_TARGET --with-system-ffi
   make -j $CPUS 
   make install

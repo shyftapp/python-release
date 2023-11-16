@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: bosh/warden-cpi
+
+inputs:
+- name: python-release
+- name: stemcell
+
+run:
+  path: python-release/ci/tasks/test.sh
+
+params:
+  PRIVATE_YML: replace-me
