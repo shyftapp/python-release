@@ -1,0 +1,9 @@
+---
+name: python-3.12
+
+files:
+- compile-3.12.env
+- runtime-3.12.env
+- python-3.12/Python-3.12.*.tgz
+- python-3.12/setuptools-67.7.2.tar.gz
+- libffi-3.4.4.tar.gz

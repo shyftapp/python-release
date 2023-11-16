@@ -29,7 +29,7 @@ set -x
 git config user.name "CI Bot"
 git config user.email "cf-bosh-eng@pivotal.io"
 
-declared_versions=("3.10")
+declared_versions=("3.10" "3.11" "3.12")
 IFS=$'\n' versions=($(sort <<< "${declared_versions[*]}"))
 unset IFS
 

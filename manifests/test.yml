@@ -30,3 +30,27 @@ instance_groups:
   stemcell: default
   networks:
   - name: default
+- name: python-3.11-test
+  azs: [z1]
+  instances: 1
+  jobs:
+  - name: python-3.11-((job-name))
+    release: python
+    properties: {}
+  vm_type: default
+  vm_extensions: ((ephemeral-disk))
+  stemcell: default
+  networks:
+  - name: default
+- name: python-3.12-test
+  azs: [z1]
+  instances: 1
+  jobs:
+  - name: python-3.12-((job-name))
+    release: python
+    properties: {}
+  vm_type: default
+  vm_extensions: ((ephemeral-disk))
+  stemcell: default
+  networks:
+  - name: default

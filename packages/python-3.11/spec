@@ -1,0 +1,9 @@
+---
+name: python-3.11
+
+files:
+- compile-3.11.env
+- runtime-3.11.env
+- python-3.11/Python-3.11.*.tgz
+- python-3.11/setuptools-67.7.2.tar.gz
+- libffi-3.4.4.tar.gz
