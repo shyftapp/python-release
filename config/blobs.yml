@@ -2,10 +2,10 @@ libffi-3.4.4.tar.gz:
   size: 1362394
   object_id: c164da33-8575-42d5-5bbe-44de72bd40b2
   sha: sha256:d66c56ad259a82cf2a9dfc408b32bf5da52371500b84745f7fb8b645712df676
-python-3.10/Python-3.10.10.tgz:
-  size: 26071329
-  object_id: fcf24392-d947-471e-548a-e277b3b86091
-  sha: sha256:fba64559dde21ebdc953e4565e731573bb61159de8e4d4cedee70fb1196f610d
+python-3.10/Python-3.10.13.tgz:
+  size: 26111363
+  object_id: 5f3ce03a-1363-4bd9-76a3-5e90d0577c44
+  sha: sha256:698ec55234c1363bd813b460ed53b0f108877c7a133d48bde9a50a1eb57b7e65
 python-3.10/setuptools-67.7.2.tar.gz:
   size: 2491608
   object_id: 7ceac4d4-ea3b-4f5b-54a5-978ba76a8e5e
