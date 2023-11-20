@@ -15,7 +15,7 @@ cd "$repo_output/$RELEASE_DIR"
 echo "$PRIVATE_YML" > config/private.yml
 
 for package in $(echo "$PACKAGES" | jq -r '.[]'); do
-  bosh vendor-package $package "$task_dir/golang-release"
+  bosh vendor-package $package "$task_dir/python-release"
 done
 
 if [ -z "$(git status --porcelain)" ]; then
@@ -26,5 +26,5 @@ git add -A
 
 package_list=$(echo "$PACKAGES" | jq -r 'join(", ")')
 first_package=$(echo "$PACKAGES" | jq -r '.[0]')
-first_version=$(cat "$task_dir/golang-release/packages/$first_package/version")
-git commit -m "Update $package_list packages to $first_version from golang-release"
+first_version=$(cat "$task_dir/python-release/packages/$first_package/version")
+git commit -m "Update $package_list packages to $first_version from python-release"
