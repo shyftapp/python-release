@@ -3,17 +3,17 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: bosh/golang-release
+    repository: bosh/bosh-ecosystem-concourse
 
 inputs:
 - name: input_repo
-- name: golang-release
+- name: python-release
 
 outputs:
 - name: output_repo
 
 run:
-  path: golang-release/ci/tasks/shared/bump-golang-package.sh
+  path: python-release/ci/tasks/shared/bump-python-package.sh
 
 params:
   GIT_USER_NAME: CI Bot
