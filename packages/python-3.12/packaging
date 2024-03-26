@@ -23,10 +23,6 @@ pushd libffi-3.4.4
   make install
 popd
 
-export LDFLAGS=-L${BOSH_INSTALL_TARGET}/libffi/lib
-export CPPFLAGS="-I${BOSH_INSTALL_TARGET}/libffi/include"
-export PKG_CONFIG_PATH=${BOSH_INSTALL_TARGET}/libffi/lib/pkgconfig
-
 echo "Extracting xz-5.6.1.tar.gz ..."
 if ! tar xpvf xz-5.6.1.tar.gz ; then
   echo "Failed extracting xz-5.6.1.tar.gz ..."
@@ -40,9 +36,9 @@ pushd xz-5.6.1
   make install
 popd
 
-export LDFLAGS=-L${BOSH_INSTALL_TARGET}/xz/lib
-export CPPFLAGS="-I${BOSH_INSTALL_TARGET}/xz/include"
-export PKG_CONFIG_PATH=${BOSH_INSTALL_TARGET}/xz/lib/pkgconfig
+export LDFLAGS="-L${BOSH_INSTALL_TARGET}/xz/lib -L${BOSH_INSTALL_TARGET}/libffi/lib"
+export CPPFLAGS="-I${BOSH_INSTALL_TARGET}/xz/include -I${BOSH_INSTALL_TARGET}/libffi/include"
+export PKG_CONFIG_PATH="${BOSH_INSTALL_TARGET}/xz/lib/pkgconfig:${BOSH_INSTALL_TARGET}/libffi/lib/pkgconfig"
 
 echo "Building python..."
 pushd Python-3.12.*
