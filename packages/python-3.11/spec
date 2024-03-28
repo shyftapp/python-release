@@ -7,4 +7,3 @@ files:
 - python-3.11/Python-3.11.*.tgz
 - python-3.11/setuptools-67.7.2.tar.gz
 - libffi-3.4.4.tar.gz
-- xz-5.6.1.tar.gz
