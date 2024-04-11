@@ -26,6 +26,9 @@ python-3.12/setuptools-67.7.2.tar.gz:
   size: 2491608
   object_id: 7ceac4d4-ea3b-4f5b-54a5-978ba76a8e5e
   sha: sha256:f104fa03692a2602fa0fec6c6a9e63b6c8a968de13e17c026957dd1f53d80990
+sqlite-autoconf-3450200.tar.gz:
+  size: 3234010
+  sha: sha256:bc9067442eedf3dd39989b5c5cfbfff37ae66cc9c99274e0c3052dc4d4a8f6ae
 xz-5.6.1.tar.gz:
   size: 3045434
   object_id: 583cfd08-e993-4594-4c4f-de6283cdba09
