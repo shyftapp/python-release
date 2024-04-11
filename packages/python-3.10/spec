@@ -7,3 +7,4 @@ files:
 - python-3.10/Python-3.10.*.tgz
 - python-3.10/setuptools-67.7.2.tar.gz
 - libffi-3.4.4.tar.gz
+- sqlite-autoconf-3450200.tar.gz
