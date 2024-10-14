@@ -36,14 +36,14 @@ pushd sqlite-autoconf-3450200
   make install
 popd
 
-echo "Extracting xz-5.6.1.tar.gz ..."
-if ! tar xpvf xz-5.6.1.tar.gz ; then
-  echo "Failed extracting xz-5.6.1.tar.gz ..."
+echo "Extracting xz-5.6.3.tar.gz ..."
+if ! tar xpvf xz-5.6.3.tar.gz ; then
+  echo "Failed extracting xz-5.6.3.tar.gz ..."
   exit 1
 fi
 
 echo "Installing xz..."
-pushd xz-5.6.1
+pushd xz-5.6.3
   ./configure --prefix="${BOSH_INSTALL_TARGET}"/extensions
   make -j $CPUS 
   make install

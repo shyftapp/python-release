@@ -30,7 +30,7 @@ sqlite-autoconf-3450200.tar.gz:
   size: 3234010
   object_id: 8b447cb8-3a5f-4a5a-782b-c5bb9462a9c8
   sha: sha256:bc9067442eedf3dd39989b5c5cfbfff37ae66cc9c99274e0c3052dc4d4a8f6ae
-xz-5.6.1.tar.gz:
-  size: 3045434
-  object_id: 583cfd08-e993-4594-4c4f-de6283cdba09
-  sha: sha256:2398f4a8e53345325f44bdd9f0cc7401bd9025d736c6d43b372f4dea77bf75b8
+xz-5.6.3.tar.gz:
+  size: 2279396
+  object_id: 9de15318-81e4-429b-6874-9d8753ade144
+  sha: sha256:b1d45295d3f71f25a4c9101bd7c8d16cb56348bbef3bbc738da0351e17c73317
