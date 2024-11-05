@@ -1,6 +1,6 @@
 name: python
 blobstore:
-  provider: s3
+  provider: gcs
   options:
     bucket_name: bosh-packages-python-release
 
