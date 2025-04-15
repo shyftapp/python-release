@@ -1,0 +1,64 @@
+name: python
+version: 0.21.0
+commit_hash: de8c89b
+uncommitted_changes: false
+jobs:
+- name: python-3.10-test
+  version: d540ad357b3f676760b52108214d4930b8ba44fc97f9ba6b9a5a8548130f4ad9
+  fingerprint: d540ad357b3f676760b52108214d4930b8ba44fc97f9ba6b9a5a8548130f4ad9
+  sha1: sha256:1bb47adf1e88c2d5fc53417b6316da175d29ead352949dedc5f203522a88f2f5
+  packages:
+  - python-3.10
+  - python-3.10-test
+- name: python-3.11-test
+  version: b77e1cc7830d2eba48aa856ba98821d8d50ad311984eb6f7e8034b5631cd05ab
+  fingerprint: b77e1cc7830d2eba48aa856ba98821d8d50ad311984eb6f7e8034b5631cd05ab
+  sha1: sha256:5e023b2f67278269965d38299b0fa3842358a09d7457b3c4e3db301454134d72
+  packages:
+  - python-3.11
+  - python-3.11-test
+- name: python-3.12-test
+  version: bf9fd0b43d46163bdf4bc6d45972d1104d3eeb5d86e4863997888f9fcd3856fb
+  fingerprint: bf9fd0b43d46163bdf4bc6d45972d1104d3eeb5d86e4863997888f9fcd3856fb
+  sha1: sha256:eb95c569c8baddd5d9360efa1524a410b06821b528b899329edb8a807830d28e
+  packages:
+  - python-3.12
+  - python-3.12-test
+packages:
+- name: python-3.10
+  version: b675efb3b2018ba3843106e590462228bba4a973a8c97bf2c3259f617a590888
+  fingerprint: b675efb3b2018ba3843106e590462228bba4a973a8c97bf2c3259f617a590888
+  sha1: sha256:1ee35e49e0d5017322093b79f9144b1db0daa8d7bc53e761ff69bcdd01daf06b
+  dependencies: []
+- name: python-3.10-test
+  version: 498e275785294cc133228dd01676280ac683daf514974b596ef2ff79ec2ba6f1
+  fingerprint: 498e275785294cc133228dd01676280ac683daf514974b596ef2ff79ec2ba6f1
+  sha1: sha256:adc45411d5e728a8cfdd36d6cd862aae6b190abb513eebafc1f8b60e24cf970d
+  dependencies:
+  - python-3.10
+- name: python-3.11
+  version: bc62e5943bf321ad5fb7ffde644ca0e62292cd2b6efd7944446d5424a62b6e03
+  fingerprint: bc62e5943bf321ad5fb7ffde644ca0e62292cd2b6efd7944446d5424a62b6e03
+  sha1: sha256:a446bf9ee887634ef053f8b68ed4b5e36cfb7cb4e5097f8b5d67f8fdabd92761
+  dependencies: []
+- name: python-3.11-test
+  version: c85a40df23c76ec203e384b3ddc1b14ff26c200dcb952e12aa0dc8d48fe63dfe
+  fingerprint: c85a40df23c76ec203e384b3ddc1b14ff26c200dcb952e12aa0dc8d48fe63dfe
+  sha1: sha256:745105d40feed386266bfad5a9d97949d360c87df6e27369fdd9be30305b4c71
+  dependencies:
+  - python-3.11
+- name: python-3.12
+  version: 7d4010c514ae7a25d222149cdf11d8c0d2053b12eb5a5d34e5c499e61a2b583f
+  fingerprint: 7d4010c514ae7a25d222149cdf11d8c0d2053b12eb5a5d34e5c499e61a2b583f
+  sha1: sha256:02e22920c7e1fd03566bb047dd5d24128a9d205fe7153f062cd39423ec34b489
+  dependencies: []
+- name: python-3.12-test
+  version: 4a48f67e4359511f0f75ff09c26dd00269dd2a5d9bb99a7aad373886eb77a05d
+  fingerprint: 4a48f67e4359511f0f75ff09c26dd00269dd2a5d9bb99a7aad373886eb77a05d
+  sha1: sha256:6af7cbea57cfff34ceb0a533ff0bce3b30e742dce5566e903d24ecc433b63291
+  dependencies:
+  - python-3.12
+license:
+  version: 850893456ab4b5e6be730bbcf0056892bb753e2cba4fba21e5f64035f3fc53db
+  fingerprint: 850893456ab4b5e6be730bbcf0056892bb753e2cba4fba21e5f64035f3fc53db
+  sha1: sha256:b1c167fc119f2b9b4c94440844e6a07d686a328fbbc846221dfb0fca73dcbc5f
