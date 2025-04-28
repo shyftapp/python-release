@@ -1,6 +1,10 @@
 name: python
 blobstore:
-  provider: gcs
+  provider: s3
   options:
-    bucket_name: bosh-packages-python-release
-
+    bucket_name: releases
+    host: shyft-s3.westus2.cloudapp.azure.com
+    port: 443
+    region: us-east-1
+    use_ssl: true
+    ssl_verify_peer: false
